@@ -1,12 +1,14 @@
 <!doctype html>
 <html ng-app="myApp">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
   </head>
-  <body>
+  <body ng-controller="controllerRoot">
     <div>
-      <input type="text" ng-model="yourName" placeholder="Enter a name here">
-      <h1>Hello, {{ yourName }}!</h1>
+      <input type="text" ng-model="text" placeholder="Enter an amount here">
+      <h1>{{ calculate(text) }}</h1>
     </div>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
