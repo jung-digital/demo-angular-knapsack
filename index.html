@@ -1,12 +1,15 @@
 <!doctype html>
 <html ng-app="myApp">
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+    <link rel="styleSheet" href="node_modules/angular-ui-grid/ui-grid.min.css"/>
+    <link rel="styleSheet" href="main.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.min.js"></script>
   </head>
   <body ng-controller="controllerRoot">
     <div>
-      <input type="text" ng-model="text" placeholder="Enter an amount here">
-      <h1>{{ calculate(text) }}</h1>
+      Enter amount for conversion <input type="text" ng-model="text" placeholder="Enter an amount here">
+      <div ui-grid="{ data: myData }" class="coinsGrid"></div>
     </div>
 
     <script src="js/main.js"></script>

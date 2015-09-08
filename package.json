@@ -1,0 +1,24 @@
+{
+  "name": "demo-angular-knapsack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular-ui-grid": "^3.0.5",
+    "angular": "^1.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jung-digital/demo-angular-knapsack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jung-digital/demo-angular-knapsack/issues"
+  },
+  "homepage": "https://github.com/jung-digital/demo-angular-knapsack#readme"
+}
