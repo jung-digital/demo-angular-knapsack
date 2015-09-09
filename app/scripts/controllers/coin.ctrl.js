@@ -16,23 +16,22 @@ angular.module('appCoinReturn')
     };
 
     $scope.coinValues = [{
-      text: "1p",
-      value: 1
-    }, {
-      text: "2p",
-      value: 2
-    }, {
-      text: "20p",
-      value: 20
-    },
-    {
-      text: "50p",
-      value: 50
+      text: "£2",
+      value: 200
     }, {
       text: "£1",
       value: 100
     }, {
-      text: "£2",
-      value: 200
+      text: "50p",
+      value: 50
+    }, {
+      text: "20p",
+      value: 20
+    }, {
+      text: "2p",
+      value: 2
+    }, {
+      text: "1p",
+      value: 1
     }];
   });
