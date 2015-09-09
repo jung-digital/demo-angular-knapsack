@@ -33,6 +33,10 @@ describe('Services: CoinParseService', function () {
     expect(CoinParseService.parse('£1.23')).toBe(123);
   });
 
+  it('parse should properly evaluate 1.1', function () {
+    expect(CoinParseService.parse('1.1')).toBe(110);
+  });
+
   it('parse should properly evaluate £2', function () {
     expect(CoinParseService.parse('£2')).toBe(200);
   });

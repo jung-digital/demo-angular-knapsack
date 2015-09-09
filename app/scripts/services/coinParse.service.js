@@ -23,6 +23,6 @@ angular.module('appCoinReturn')
         return 'Please provide a valid imperial currency.';
       }
 
-      return val * (lbs ? 100 : 1);
+      return Math.round(val * (lbs ? 100 : 1));
     };
   });
