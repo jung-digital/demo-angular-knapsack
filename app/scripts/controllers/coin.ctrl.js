@@ -22,6 +22,10 @@ angular.module('appCoinReturn')
 			text: "2p",
 			value: 2
 		}, {
+      text: "20p",
+      value: 20
+    },
+    {
 			text: "50p",
 			value: 50
 		}, {
