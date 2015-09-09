@@ -55,10 +55,6 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
 
 /* Supporting content content */
 .content {
@@ -73,25 +69,17 @@ body {
   line-height: 40px;
   font-size: 28px;
   padding: 5px;
-  width: 100%;
+  width: 90%;
+  margin: 2% 5%;
 }
 
-.content p + h4 {
-  margin-top: 28px;
+.content p {
+  text-align: center;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+    max-width: 988px;
   }
 }
