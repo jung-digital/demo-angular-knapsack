@@ -19,6 +19,10 @@ module.exports = function(config) {
       "jasmine"
     ],
 
+    client: {
+      captureConsole: true
+    },
+
     // list of files / patterns to load in the browser
     files: [
       // bower:js
@@ -52,13 +56,21 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      "PhantomJS"
+      'Chrome', 'Chrome_without_security'
     ],
+
+    // you can define custom flags
+    customLaunchers: {
+      Chrome_without_security: {
+        base: 'Chrome',
+        flags: ['--disable-web-security']
+      }
+    },
 
     // Which plugins to enable
     plugins: [
-      "karma-phantomjs-launcher",
-      "karma-jasmine"
+      'karma-chrome-launcher',
+      'karma-jasmine'
     ],
 
     // Continuous Integration mode

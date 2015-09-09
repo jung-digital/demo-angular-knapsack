@@ -28,6 +28,7 @@
     "jshint-stylish": "^1.0.0",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
+    "karma-chrome-launcher": "^0.2.0",
     "time-grunt": "^1.0.0"
   },
   "engines": {
@@ -37,3 +38,4 @@
     "test": "grunt test"
   }
 }
+

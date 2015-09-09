@@ -2,50 +2,49 @@
 
 angular.module('appCoinReturn')
 	.service('CoinService', function() {
-		this.minimizeCoins = function(coinValues, targetAmount) {
+    // Greedy algorithm will not account for the scenario where coin at i is less than 2x coin at (i+1)!!
+		this.returnChangeFor = function(coinValues, fullAmount) {
+      if (!coinValues || !coinValues.length)
+        throw 'Please provide a valid coinValues array.';
+
 			// Private recursive calculation function.
 			function _calc(coins, amount) {
 				var result;
 
 				// Loop through each coin value, starting at maximum coin value.
 				for (var ix = 0; ix < coinValues.length; ix++) {
-					var nextVal = coinValues[ix].value * (coins[ix] + 1);
-					if (nextVal > amount) {
-						continue;
+					var coinVal = coinValues[ix].value;
+
+          if (!coinVal)
+          {
+            throw ('Coin value at ix ' + ix + ' is invalid.');
+          }
+
+					if (coinVal > amount) {
+						continue; // To next lower coin denomination.
 					}
-					if (nextVal === amount) {
-						result = coins.concat(); // Duplicate coins array.
+
+					if (coinVal == amount) {
+						result = coins.concat();
 						result[ix]++;
 						break;
 					}
-					// Recurse
-					result = coins.concat(); // Duplicate coins array.
 
-					if (amount > nextVal) {
-						var result2 = coins.concat();
+					var next = coins.concat();
+					next[ix]++;
 
-						result[ix]++;
-						result = _calc(result, amount - coinValues[ix]);
-
-            if (result !== result2)
-            {
-              continue;
-            }
-					}
+          return _calc(next, amount - coinVal);
 				}
 
 				return result;
 			}
 
-			// ES5+ Only. Would need to use Babel.js or another transpiler to work on ES4 browsers.
 			coinValues.sort(function(a, b) {
-				return b - a ? -1 : 1;
+				return b.value - a.value > 0 ? 1 : -1;
 			});
 
-			var coinCounts = coinValues.map(function() {
-					return 0;
-				});
+			var coins = coinValues.map(function() {return 0;});
 
-			return _calc(coinCounts) === targetAmount;
+			return _calc(coins, fullAmount);
 		};
 	});
