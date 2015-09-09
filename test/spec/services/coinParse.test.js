@@ -30,7 +30,7 @@ describe('Services: CoinParseService', function () {
   });
 
   it('parse should properly error 500.5', function () {
-    expect(CoinParseService.parse('500.5')).toBe('Please provide a denomination.');
+    expect(CoinParseService.parse('500.5')).toBe(500.5);
   });
 
   it('parse should properly error ASDF', function () {
