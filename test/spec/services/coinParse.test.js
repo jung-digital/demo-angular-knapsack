@@ -74,7 +74,7 @@ describe('Services: CoinParseService', function () {
   });
 
   it('parse should properly error ""', function () {
-    expect(CoinParseService.parse('')).toBe('Please enter a valid imperial currency. Empty is not allowed.');
+    expect(CoinParseService.parse('')).toBe('Please enter a valid imperial currency. No digits found.');
   });
 
   it('parse should properly error 1x', function () {
@@ -86,6 +86,6 @@ describe('Services: CoinParseService', function () {
   });
 
   it('parse should properly error £p', function () {
-    expect(CoinParseService.parse('£p')).toBe('Please provide a valid imperial currency.');
+    expect(CoinParseService.parse('£p')).toBe('Please enter a valid imperial currency. No digits found.');
   });
 });
