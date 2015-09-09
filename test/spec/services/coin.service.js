@@ -46,11 +46,17 @@ describe('Services: CoinService', function () {
   });
 
   it('returnChangeFor should properly throw an error when no arguments are provided.', function () {
-    expect(CoinService.returnChangeFor.bind(CoinService)).toThrow();
+    expect(function () {
+      CoinService.returnChangeFor();
+    }).toThrow();
   });
 
   it('returnChangeFor should properly throw an error when an invalid argument is provided.', function () {
-    expect(CoinService.returnChangeFor.bind(CoinService, [])).toThrow();
-    expect(CoinService.returnChangeFor.bind(CoinService, [0])).toThrow();
+    expect(function () {
+      CoinService.returnChangeFor([]);
+    }).toThrow();
+    expect(function () {
+      CoinService.returnChangeFor([0])
+    }).toThrow();
   });
 });
