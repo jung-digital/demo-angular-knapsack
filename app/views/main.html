@@ -3,7 +3,18 @@
 </div>
 <div class="row marketing">
   <div>
-    Enter amount for conversion <input type="text" ng-model="text" placeholder="Enter an amount here">
-    <div ui-grid="{ data: myData }" class="coinsGrid"></div>
+    <form ng-submit="returnChange()">
+      <p>
+        Enter amount for conversion <input type="text" ng-model="currency" currency placeholder="Enter an amount here">
+      </p>
+      <p>
+        Value in pence: {{currency}}
+      </p>
+      <p>
+        <div ng-repeat="coin in coinValues">
+          {{coin.text}}: {{result[$index]}}
+        </div>
+      </p>
+    </form>
   </div>
 </div>

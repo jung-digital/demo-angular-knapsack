@@ -4,29 +4,24 @@ angular.module('appCoinReturn')
   .service('CoinParseService', function() {
     this.parse = function (value) {
       var lbs = /^£/i.test(value),
-          pence = /p$/i.test(value);
+          pence = /p$/i.test(value) || !lbs;
 
       if (lbs && pence)
       {
         return 'Please do not provide lbs and pence.';
       }
-      else if (!(lbs || pence)) // DeMorgan's
+      else if (value.length == 0)
       {
-        return 'Please provide a denomination.';
+        return 'Please enter a valid imperial currency. Empty is not allowed.';
       }
 
-      if (lbs)
-      {
-        return parseFloat(value.slice(1)) * 100;
-      }
-
-      var val = parseFloat(value);
+      var val = parseFloat(value.slice(lbs ? 1 : 0));
 
       if (isNaN(val))
       {
         return 'Please provide a valid imperial currency.';
       }
 
-      return val;
+      return val * (lbs ? 100 : 1);
     };
   });

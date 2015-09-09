@@ -8,15 +8,11 @@
  * Controller of the appCoinReturn
  */
 angular.module('appCoinReturn')
-	.controller('CoinCtrl', function($scope) {
+	.controller('CoinCtrl', function($scope, CoinService) {
 		$scope.text = "100p";
 
-		$scope.calculate = function(amount) {
-			if (isNaN(parseFloat(amount))) {
-				return 'Enter an imperial monetary value.';
-			}
-
-			return Math.sqrt(amount);
+		$scope.returnChange = function() {
+			$scope.result = CoinService.returnChangeFor($scope.coinValues, $scope.currency);
 		};
 
 		$scope.coinValues = [{
