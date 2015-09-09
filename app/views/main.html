@@ -1,11 +1,12 @@
-<div class="jumbotron">
-  <h1>Enter Coins to Return</h1>
-</div>
-<div class="row marketing">
+
+<div class="row content">
+  <div class="jumbotron">
+    <h1>Coin Return Calculator</h1>
+  </div>
   <div>
     <form ng-submit="returnChange()">
       <p>
-        Enter amount for conversion <input type="text" ng-model="currency" uk-currency placeholder="Enter an amount here">
+        Enter amount for conversion, ENTER to submit: <br/><input type="text" ng-model="currency" uk-currency placeholder="Enter an amount here">
       </p>
       <p>
         Value in pence: {{currency}}
