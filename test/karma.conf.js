@@ -56,20 +56,12 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      'Chrome', 'Chrome_without_security'
+      'PhantomJS'
     ],
-
-    // you can define custom flags
-    customLaunchers: {
-      Chrome_without_security: {
-        base: 'Chrome',
-        flags: ['--disable-web-security']
-      }
-    },
 
     // Which plugins to enable
     plugins: [
-      'karma-chrome-launcher',
+      'karma-phantomjs-launcher',
       'karma-jasmine'
     ],
 
