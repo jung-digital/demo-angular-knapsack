@@ -5,15 +5,15 @@ angular.module('appCoinReturn')
     this.parse = function (value) {
       var lbSymb = /^£/i.test(value),
           lbs = lbSymb || /\./i.test(value),
-          pence = /p$/i.test(value) || !lbs;
+          pence = /p$/i.test(value);
 
-      if (lbs && pence)
-      {
-        //return 'Please do not provide lbs and pence.';
-      }
-      else if (value.length == 0)
+      if (value.length == 0)
       {
         return 'Please enter a valid imperial currency. Empty is not allowed.';
+      }
+      else if (!lbs && !pence && !/^[0-9]+$/i.test(value))
+      {
+        return 'Please provide a valid imperial currency.';
       }
 
       var val = parseFloat(value.slice(lbSymb ? 1 : 0)).toFixed(2);
