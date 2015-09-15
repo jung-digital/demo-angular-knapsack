@@ -7,5 +7,5 @@ angular.module('appCoinReturn')
     link: function(scope, element, attrs, ngModelController) {
       ngModelController.$parsers.push(CoinParseService.parse);
     }
-  }
+  };
 });

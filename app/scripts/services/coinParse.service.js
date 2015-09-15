@@ -5,8 +5,7 @@ angular.module('appCoinReturn')
     this.parse = function (value) {
       var match = /(^£?)(.*?)(p?$)/.exec(value);
       var lbSymb = match[1],
-          lbs = lbSymb || /\./i.test(value),
-          pence = match[3];
+          lbs = lbSymb || /\./i.test(value);
 
       if (match[2].length == 0)
       {

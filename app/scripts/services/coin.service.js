@@ -5,7 +5,9 @@ angular.module('appCoinReturn')
     // Greedy algorithm will not account for the scenario where coin at i is less than 2x coin at (i+1)!!
     this.returnChangeFor = function(coinValues, fullAmount) {
       if (!coinValues || !coinValues.length)
+      {
         throw 'Please provide a valid coinValues array.';
+      }
 
       // Private recursive calculation function.
       function _calc(coins, amount) {
@@ -24,7 +26,7 @@ angular.module('appCoinReturn')
             continue; // To next lower coin denomination.
           }
 
-          if (coinVal == amount) {
+          if (coinVal === amount) {
             result = coins.concat();
             result[ix]++;
             break;
